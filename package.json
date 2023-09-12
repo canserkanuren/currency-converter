@@ -2,17 +2,22 @@
   "name": "@currency-converter/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run currency-converter:serve --host 0.0.0.0"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.2.0",
+    "@angular/cdk": "^16.2.3",
     "@angular/common": "~16.2.0",
     "@angular/compiler": "~16.2.0",
     "@angular/core": "~16.2.0",
     "@angular/forms": "~16.2.0",
+    "@angular/material": "^16.2.3",
     "@angular/platform-browser": "~16.2.0",
     "@angular/platform-browser-dynamic": "~16.2.0",
     "@angular/router": "~16.2.0",
+    "@ngneat/until-destroy": "^10.0.0",
     "@nx/angular": "16.8.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
