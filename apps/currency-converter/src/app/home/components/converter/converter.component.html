@@ -1,0 +1,52 @@
+<mat-card class="custom-card">
+  <mat-card-content class="main-container">
+    <span class="currency-container">
+      {{ reversedCurrentCurrency }} to {{ currentCurrency }} currency rate:
+      <strong>{{ rate | number: '0.2' }}</strong>
+
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Reset currency"
+        fontIcon="restart_alt"
+        (click)="resetCurrency()"
+      ></mat-icon>
+    </span>
+
+    <div class="fixed-rate-container">
+      <mat-checkbox [(ngModel)]="hasFixedRate">Fixed rate</mat-checkbox>
+
+      <mat-form-field>
+        <mat-label>Fixed rate</mat-label>
+        <input
+          matInput
+          [disabled]="!hasFixedRate"
+          [(ngModel)]="fixedRate"
+          (ngModelChange)="fixedRate$.next($event)"
+        />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>{{ reversedCurrentCurrency }}</mat-label>
+      <input
+        matInput
+        [(ngModel)]="amount"
+        (ngModelChange)="amount$.next($event)"
+      />
+    </mat-form-field>
+
+    <span>
+      Here's how much it makes in {{ currentCurrency }}:
+      <strong>{{ result | currency: currentCurrency }}</strong>
+    </span>
+
+    <div class="slider">
+      <span>EUR</span>
+      <mat-slide-toggle
+        [(ngModel)]="isUsd"
+        (ngModelChange)="reverseCurrency()"
+      ></mat-slide-toggle>
+      <span>USD</span>
+    </div>
+  </mat-card-content>
+</mat-card>
