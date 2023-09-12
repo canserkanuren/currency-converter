@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx run currency-converter:serve --host 0.0.0.0"
+    "start": "nx run currency-converter:serve --host 0.0.0.0",
+    "build": "nx run currency-converter:build:production"
   },
   "private": true,
   "dependencies": {
