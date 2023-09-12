@@ -6,4 +6,5 @@
 
 ## Raccourcis pris
 
-Aucun
+- Non utilisation des Signal (nouveauté Angular)
+- FormsModule au lieu de ReactiveForms
